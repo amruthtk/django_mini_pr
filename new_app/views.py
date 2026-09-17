@@ -15,8 +15,8 @@ def menu_data(request):
     form = menuForm()
     if request.method == 'POST':
         form = menuForm(request.POST)
-    if form.is_valid():
-        form.save()
+        if form.is_valid():
+            form.save()
 
     return render(request,'menu_data.html',{'form':form})
 
